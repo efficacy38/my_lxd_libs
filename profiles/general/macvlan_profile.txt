@@ -1,0 +1,9 @@
+config: {}
+description: ""
+devices:
+  eth0:
+    nictype: macvlan
+    parent: ens160
+    type: nic
+name: macvlan
+
