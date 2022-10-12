@@ -1,13 +1,9 @@
 #!/bin/bash
 
-lxc profile create docker-ct
-lxc profile edit docker-ct <<-EOF
+lxc profile create docker-vm
+export name=efficacy38
+lxc profile edit docker-vm <<-EOF
 config:
-  security.nesting: "true"
-  security.privileged: "true"
-  security.syscalls.intercept.mknod: "true"
-  security.syscalls.intercept.setxattr: "true"
-
   user.user-data: |
     #cloud-config
     ssh_pwauth: True
@@ -37,4 +33,4 @@ config:
 EOF
 
 # how to use it
-# lxc launch ubuntu:20.04 -p default -p macvlan -p docker-ct <CT name>
+# lxc launch ubuntu:20.04 -p default -p macvlan -p docker-vm --vm <VM name>

@@ -1,0 +1,3 @@
+config:
+  limits.cpu: "6"
+  limits.memory: "8192MB"
