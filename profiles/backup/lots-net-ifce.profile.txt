@@ -1,0 +1,25 @@
+config: {}
+description: Default LXD profile
+devices:
+  enp5s0:
+    name: enp5s0
+    network: lxdbr0
+    type: nic
+  enp6s0:
+    name: enp6s0
+    network: lxdbr0
+    type: nic
+  enp7s0:
+    name: enp7s0
+    network: lxdbr0
+    type: nic
+  enp8s0:
+    name: enp8s0
+    network: lxdbr0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: lots-net-ifce
+used_by: []

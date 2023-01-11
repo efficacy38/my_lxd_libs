@@ -1,0 +1,10 @@
+config:
+  limits.cpu: "2"
+  limits.memory: 2GiB
+description: ""
+devices: {}
+name: small
+used_by:
+- /1.0/instances/dev-vm
+- /1.0/instances/gw?project=test
+- /1.0/instances/server?project=test

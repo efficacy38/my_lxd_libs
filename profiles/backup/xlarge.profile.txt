@@ -1,0 +1,12 @@
+config:
+  limits.cpu: "6"
+  limits.memory: 16GiB
+description: ""
+devices:
+  root:
+    path: /
+    pool: default
+    size: 50GiB
+    type: disk
+name: xlarge
+used_by: []

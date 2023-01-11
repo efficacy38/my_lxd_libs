@@ -1,0 +1,12 @@
+config:
+  limits.cpu: "4"
+  limits.memory: 4GiB
+description: ""
+devices:
+  root:
+    path: /
+    pool: default
+    size: 20GiB
+    type: disk
+name: medium
+used_by: []

@@ -1,0 +1,30 @@
+config:
+  cloud-init.user-data: |
+    #cloud-config
+    users:
+      - default
+      - name: efficacy38
+        home: /home/efficacy38
+        shell: /bin/bash
+        lock_passwd: false
+        groups:
+          - sudo
+        passwd: $6$d6i9sl57NE0M/lon$KtQd1CkelpoagWcL9C15zlYkfCnCZ9qZToQCAzOO4c.NEv3UJ/OQF79Yvn3pV2PBoclzn8/rvTVjqm/wFVw0i.
+        ssh_import_id:
+          - gh:efficacy38
+    packages:
+      - git
+      - openssh-server
+      - bash-completion
+description: Default LXD profile
+devices:
+  eth0:
+    name: eth0
+    network: lxdbr0
+    type: nic
+  root:
+    path: /
+    pool: lxd-storage
+    type: disk
+name: testNew
+used_by: []

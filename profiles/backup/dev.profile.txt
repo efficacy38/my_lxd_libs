@@ -1,0 +1,48 @@
+config:
+  cloud-init.user-data: |
+    #cloud-config
+    users:
+      - default
+      - name: efficacy38
+        shell: /bin/bash
+        groups:
+          - sudo
+        # generate with `mkpasswd --method=SHA-512 --rounds=4096`
+        lock_passwd: false
+        passwd: $6$rounds=4096$1UMdfx8etzH.4nKS$L/zgd3/Y.9MaWmpEWw9lY9LCdniWuVfhcCMNW/1d4MWE2N6L.rusE5ICGYGcYh7smmIqK6e4ejDsiriyOZ.jD0
+        ssh_import_id:
+          - gh:efficacy38
+        sudo: ALL=(ALL) NOPASSWD:ALL
+    snap:
+      commands:
+        00: 'apt-get install -y snapd'
+        01: 'snap install chezmoi --classic'
+        02: 'snap install gh'
+    runcmd:
+      - [su, -, efficacy38, -c, "chezmoi init https://github.com/efficacy38/chezmoi-dotfile.git"]
+      - [su, -, efficacy38, -c, "chezmoi apply"]
+      - [ln, -s, /mnt/efficacy38/Tmp, /home/efficacy38/Tmp]
+  raw.idmap: both 1000 1000
+  security.nesting: "true"
+  security.privileged: "true"
+  security.syscalls.intercept.mknod: "true"
+  security.syscalls.intercept.setxattr: "true"
+description: Default LXD profile
+devices:
+  dev:
+    path: /mnt/efficacy38/Tmp
+    source: /home/efficacy38/Tmp
+    type: disk
+  eth0:
+    name: eth0
+    network: lxdbr0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: dev
+used_by:
+- /1.0/instances/dev
+- /1.0/instances/dev-vm
+- /1.0/instances/dev1
