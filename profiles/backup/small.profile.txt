@@ -5,6 +5,14 @@ description: ""
 devices: {}
 name: small
 used_by:
-- /1.0/instances/dev-vm
-- /1.0/instances/gw?project=test
-- /1.0/instances/server?project=test
+- /1.0/instances/webrtc-gw
+- /1.0/instances/pjsua-dev
+- /1.0/instances/lsa-test
+- /1.0/instances/ans-slv-3
+- /1.0/instances/ans-slv-2
+- /1.0/instances/ans-slv-1
+- /1.0/instances/almalinux-vm
+- /1.0/instances/test
+- /1.0/instances/testK8s
+- /1.0/instances/testVoIP
+- /1.0/instances/test-alma

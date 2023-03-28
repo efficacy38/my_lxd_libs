@@ -1,12 +1,12 @@
 config:
-  limits.cpu: "4"
-  limits.memory: 4GiB
+  limits.cpu: "6"
+  limits.memory: 16GiB
 description: ""
 devices:
   root:
     path: /
     pool: default
-    size: 40GiB
+    size: 20GiB
     type: disk
-name: medium
+name: k8s
 used_by: []

@@ -16,8 +16,9 @@ config:
         # generate with `mkpasswd --method=SHA-512 --rounds=4096`
         lock_passwd: false
         passwd: $6$rounds=4096$1UMdfx8etzH.4nKS$L/zgd3/Y.9MaWmpEWw9lY9LCdniWuVfhcCMNW/1d4MWE2N6L.rusE5ICGYGcYh7smmIqK6e4ejDsiriyOZ.jD0
-        ssh_import_id:
-          - gh:efficacy38
+        ssh_authorized_keys:
+          - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ9dVaHPQpIm9vO5BIWnNpyXDe7mWZ8Bxw1YA+GDfP4J efficacy38@phoenixton
+        sudo: ALL=(ALL) NOPASSWD:ALL
     packages:
       - git
       - openssh-server
@@ -27,6 +28,7 @@ config:
       - curl
       - wget
   security.nesting: "true"
+  security.secureboot: "false"
   security.syscalls.intercept.mknod: "true"
   security.syscalls.intercept.setxattr: "true"
 description: Default LXD profile
@@ -41,15 +43,13 @@ devices:
     type: disk
 name: default
 used_by:
-- /1.0/instances/pjsip
-- /1.0/instances/kamailio
-- /1.0/instances/internal-recorder
-- /1.0/instances/sip-dispatcher-1
-- /1.0/instances/vagrant?project=k8s
-- /1.0/instances/desktop-xfce?project=test
-- /1.0/instances/bbs-devel
-- /1.0/instances/dev
-- /1.0/instances/dev-vm
-- /1.0/instances/dev1
-- /1.0/instances/gw?project=test
-- /1.0/instances/server?project=test
+- /1.0/instances/webrtc-gw
+- /1.0/instances/pjsua-dev
+- /1.0/instances/ans-slv-3
+- /1.0/instances/ans-slv-2
+- /1.0/instances/ans-slv-1
+- /1.0/instances/almalinux-vm
+- /1.0/instances/test
+- /1.0/instances/testK8s
+- /1.0/instances/testVoIP
+- /1.0/instances/test-alma

@@ -1,0 +1,21 @@
+config: {}
+description: Default LXD profile
+devices:
+  eth0:
+    name: eth0
+    network: lxdbr0
+    type: nic
+  root:
+    path: /
+    pool: pool2
+    type: disk
+name: hdd-volume-default
+used_by:
+- /1.0/instances/acm
+- /1.0/instances/lsa-test
+- /1.0/instances/ans-slv-3
+- /1.0/instances/ans-slv-2
+- /1.0/instances/ans-slv-1
+- /1.0/instances/almalinux-vm
+- /1.0/instances/test
+- /1.0/instances/testK8s

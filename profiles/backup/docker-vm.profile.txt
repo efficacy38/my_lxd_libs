@@ -28,5 +28,4 @@ config:
 description: ""
 devices: {}
 name: docker-vm
-used_by:
-- /1.0/instances/kamailio
+used_by: []

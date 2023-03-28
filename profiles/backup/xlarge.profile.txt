@@ -1,5 +1,5 @@
 config:
-  limits.cpu: "6"
+  limits.cpu: "12"
   limits.memory: 16GiB
 description: ""
 devices:
@@ -9,4 +9,5 @@ devices:
     size: 50GiB
     type: disk
 name: xlarge
-used_by: []
+used_by:
+- /1.0/instances/acm

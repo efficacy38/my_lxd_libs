@@ -24,7 +24,6 @@ config:
       - [ln, -s, /mnt/efficacy38/Tmp, /home/efficacy38/Tmp]
   raw.idmap: both 1000 1000
   security.nesting: "true"
-  security.privileged: "true"
   security.syscalls.intercept.mknod: "true"
   security.syscalls.intercept.setxattr: "true"
 description: Default LXD profile
@@ -43,6 +42,4 @@ devices:
     type: disk
 name: dev
 used_by:
-- /1.0/instances/dev
-- /1.0/instances/dev-vm
-- /1.0/instances/dev1
+- /1.0/instances/pjsua-dev

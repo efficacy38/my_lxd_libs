@@ -1,5 +1,11 @@
 config: {}
 description: ""
-devices: {}
+devices:
+  eth0:
+    nictype: macvlan
+    parent: eno1
+    type: nic
 name: macvlan
-used_by: []
+used_by:
+- /1.0/instances/webrtc-gw
+- /1.0/instances/testVoIP

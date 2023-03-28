@@ -9,7 +9,4 @@ devices:
     size: 40GiB
     type: disk
 name: large
-used_by:
-- /1.0/instances/vagrant?project=k8s
-- /1.0/instances/desktop-xfce?project=test
-- /1.0/instances/bbs-devel
+used_by: []
